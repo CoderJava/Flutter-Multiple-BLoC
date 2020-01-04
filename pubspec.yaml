@@ -18,7 +18,7 @@ dependencies:
   flutter_bloc: ^3.1.0
 
   # A powerful Http client for Dart, which supports interceptors, FormData, Request Cancellation,
-  # File Downloadint, Timeout etc.
+  # File Downloading, Timeout etc.
   dio: ^3.0.8
 
 dev_dependencies:
