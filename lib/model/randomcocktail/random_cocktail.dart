@@ -1,14 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'random_cocktail.g.dart';
 
 @JsonSerializable()
 class RandomCocktail {
-  String strDrink;
-  String strDrinkThumb;
+  List<ItemCocktail> drinks;
   @JsonKey(ignore: true)
   String error;
 
-  RandomCocktail(this.strDrink, this.strDrinkThumb);
+  RandomCocktail(this.drinks);
 
   factory RandomCocktail.fromJson(Map<String, dynamic> json) => _$RandomCocktailFromJson(json);
 
@@ -18,6 +18,23 @@ class RandomCocktail {
 
   @override
   String toString() {
-    return 'RandomCocktail{strDrink: $strDrink, strDrinkThumb: $strDrinkThumb}';
+    return 'RandomCocktail{drinks: $drinks}';
+  }
+}
+
+@JsonSerializable()
+class ItemCocktail {
+  String strDrink;
+  String strDrinkThumb;
+
+  ItemCocktail(this.strDrink, this.strDrinkThumb);
+
+  factory ItemCocktail.fromJson(Map<String, dynamic> json) => _$ItemCocktailFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ItemCocktailToJson(this);
+
+  @override
+  String toString() {
+    return 'ItemCocktail{strDrink: $strDrink, strDrinkThumb: $strDrinkThumb}';
   }
 }
